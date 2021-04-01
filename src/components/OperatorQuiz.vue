@@ -58,7 +58,7 @@ export default {
                 "/": (a, b) => a / b,
                 "*": (a, b) => a * b
             };
-
+/*
             const methodToUse = methods[this.operator];
 
             this.answers = [];
@@ -77,20 +77,60 @@ export default {
             this.answers[ parseInt(Math.random() * this.answers.length) ] = expectedAnswer;
 
             this.expectedAnswer = expectedAnswer;
+
+            */
+
+          // var randomNumber = Math.floor((Math.random() * 10) + 1);
         
 
 
-            /*
+            const methodToUse = methods[this.operator];
+
+            this.answers = [];
+
+            var arr = [];
+            while(arr.length < 4){
+                var r = Math.floor(Math.random() * 4) + 1;
+                if(arr.indexOf(r) === -1) arr.push(r);
+            }
+            console.log(arr);
+
+
+            // function Random1() {
+            //     return Math.floor((Math.random() * 5) + 1);
+            // }
+            // function Random2() {
+            //     return Math.floor((Math.random() * 5) + 1);
+            // }
+            // function Random3() {
+            //     return Math.floor((Math.random() * 5) + 1);
+            // }
+            // function Random4() {
+            //     return Math.floor((Math.random() * 5) + 1);
+            // }
+
+
+
+            // this.answers.push(methodToUse(this.operandLeft, this.operandRight + Random1()));
+            // this.answers.push(methodToUse(this.operandLeft + Random2(), this.operandRight));
+            // this.answers.push(methodToUse(this.operandLeft, this.operandRight - Random3()));
+            // this.answers.push(methodToUse(this.operandLeft - Random4(), this.operandRight));
+
+            this.answers.push(methodToUse(this.operandLeft, this.operandRight + arr[0]));
+            this.answers.push(methodToUse(this.operandLeft + arr[1], this.operandRight));
+            this.answers.push(methodToUse(this.operandLeft, this.operandRight - arr[2]));
+            this.answers.push(methodToUse(this.operandLeft - arr[3], this.operandRight));
+
+
+
+
+
 
             const expectedAnswer = methodToUse(this.operandLeft, this.operandRight);
 
-            this.answers.push(expectedAnswer + 1);
-            this.answers.push(expectedAnswer - 1);
-            this.answers.push(expectedAnswer);
-
+            this.answers[ parseInt(Math.random() * this.answers.length) ] = expectedAnswer;
 
             this.expectedAnswer = expectedAnswer;
-            */
         }
     }
 
